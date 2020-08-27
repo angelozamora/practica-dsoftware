@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index.jsp
+    Created on : 27-ago-2020, 17:51:57
+    Author     : Tito
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
