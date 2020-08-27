@@ -5,7 +5,9 @@
  */
 package Factory;
 
+import dao.MySQLProductorDAO;
 import dao.MySQLVinoDAO;
+import design.IProductorDAO;
 import design.IVinoDAO;
 
 /**
@@ -29,5 +31,8 @@ public class MySQLFactoryDAO {
         return new MySQLVinoDAO();
     }
     
+    public IProductorDAO getProductorService(){
+        return new MySQLProductorDAO();
+    }
     
 }

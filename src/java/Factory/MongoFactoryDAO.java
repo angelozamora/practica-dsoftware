@@ -6,6 +6,9 @@
 package Factory;
 
 import dao.MongoVinoDAO;
+import dao.MySQLProductorDAO;
+import dao.MySQLVinoDAO;
+import design.IProductorDAO;
 import design.IVinoDAO;
 
 /**
@@ -26,7 +29,11 @@ public class MongoFactoryDAO {
     
     
     public IVinoDAO getVinoService(){
-        return new MongoVinoDAO();
+        return new MySQLVinoDAO();
+    }
+    
+    public IProductorDAO getProductorService(){
+        return new MySQLProductorDAO();
     }
     
 }
