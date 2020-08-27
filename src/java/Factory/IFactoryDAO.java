@@ -17,7 +17,7 @@ public class IFactoryDAO {
        factorydb = new FactoryDB(); 
     }
     
-    public FactoryDB getInstance(){
+    public static FactoryDB getInstance(){
         return factorydb;
     }
     
