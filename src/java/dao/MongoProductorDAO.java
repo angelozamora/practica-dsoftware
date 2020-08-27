@@ -5,36 +5,39 @@
  */
 package dao;
 
-import design.IVinoDAO;
+import design.IProductorDAO;
 import java.util.List;
+import modelo.Productor;
 import modelo.Resultado;
-import modelo.Vino;
 
 /**
  *
  * @author Angelo
  */
-public class MongoVinoDAO  implements IVinoDAO{
-    
-    @Override
-    public void crearVino(Vino vino) {
-        
-        
-    }
-
+public class MongoProductorDAO implements IProductorDAO{
 
     @Override
-    public List<Vino> obtenerVinos() {
+    public void crearProductor(Productor productor) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Resultado eliminarVino(int id) {
+    public Productor obtenerProductorxId(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Vino obtenerVinoMayorProduccion() {
+    public List<Productor> obtenerProductores() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Resultado eliminarProductor(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Productor> obtenerProductoresSinProduccion() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

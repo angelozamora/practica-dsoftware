@@ -5,7 +5,11 @@
  */
 package dao;
 
+import Factory.FactoryDB;
 import design.IVinoDAO;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.List;
 import modelo.Resultado;
 import modelo.Vino;
@@ -15,16 +19,23 @@ import modelo.Vino;
  * @author Angelo
  */
 public class MySQLVinoDAO implements IVinoDAO{
+    
+    Statement st=null;
+    ResultSet rs=null;
+    Connection cn ;
 
+    public MySQLVinoDAO() {
+        cn=FactoryDB.getInstance().getAccesoBD("MySQL").getConnection();
+    }
+    
+    
+    
     @Override
     public void crearVino(Vino vino) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
-    @Override
-    public Vino obtenerVinoxId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     @Override
     public List<Vino> obtenerVinos() {
@@ -34,6 +45,28 @@ public class MySQLVinoDAO implements IVinoDAO{
     @Override
     public Resultado eliminarVino(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Vino obtenerVinoMayorProduccion() {
+        Vino vino = new Vino();
+        
+        try{
+            st=cn.createStatement();
+            rs=st.executeQuery("CALL SP_vinoMayorProduccion()");
+            
+            while(rs.next()){
+                vino.setId(rs.getInt("Vinos_idVino"));
+   
+            }
+            
+        }
+        catch(Exception e){
+            e.getMessage();
+        }
+        
+
+        return vino;
     }
     
 }

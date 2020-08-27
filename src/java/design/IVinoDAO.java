@@ -16,9 +16,9 @@ import modelo.Vino;
 public interface IVinoDAO {
     void crearVino(Vino vino);
     
-    Vino obtenerVinoxId(int id);
-    
     List<Vino> obtenerVinos();
     
     Resultado eliminarVino(int id);
+    
+    Vino obtenerVinoMayorProduccion();
 }

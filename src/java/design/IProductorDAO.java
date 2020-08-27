@@ -21,4 +21,6 @@ public interface IProductorDAO {
     List<Productor> obtenerProductores();
     
     Resultado eliminarProductor(int id);
+    
+    List<Productor> obtenerProductoresSinProduccion();
 }
