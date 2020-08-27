@@ -5,10 +5,12 @@
  */
 package conexion;
 
+import java.sql.Connection;
+
 /**
  *
  * @author Angelo
  */
 public interface IAccesoBD {
-    
+    public Connection getConnection();
 }

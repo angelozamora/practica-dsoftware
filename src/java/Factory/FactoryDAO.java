@@ -11,4 +11,13 @@ package Factory;
  */
 public class FactoryDAO {
     
+    static FactoryDAO factoryDAO;
+    
+    static{
+        factoryDAO = new FactoryDAO();
+    }
+    
+    public static FactoryDAO getInstance(){
+        return factoryDAO;
+    }
 }
