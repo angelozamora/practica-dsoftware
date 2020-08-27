@@ -40,5 +40,10 @@ public class MongoProductorDAO implements IProductorDAO{
     public List<Productor> obtenerProductoresSinProduccion() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Productor> obtenerProductoresSinNombreSinProduccion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
