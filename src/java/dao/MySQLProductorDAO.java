@@ -104,10 +104,36 @@ public class MySQLProductorDAO implements IProductorDAO{
             e.getMessage();
         }
         
+        return productorList;
+
+    }
+
+    @Override
+    public List<Productor> filtrarProductoresxRegionxCantidadBotellas() {
+        List<Productor> productorList = new ArrayList<>();
+        
+        try{
+            st=cn.createStatement();
+            rs=st.executeQuery("CALL SP_productorSinNombreSinProducir()");
+            
+            while(rs.next()){
+                
+                Productor productor=new Productor();
+                productor.setId(rs.getInt("idProductor"));
+                productor.setApellido(rs.getString("apellido"));
+                
+                productorList.add(productor);
+                
+            }
+            
+        }
+        catch(Exception e){
+            e.getMessage();
+        }
+        
         
         
         return productorList;
-
     }
     
     

@@ -25,4 +25,6 @@ public interface IProductorDAO {
     List<Productor> obtenerProductoresSinProduccion();
     
     List<Productor> obtenerProductoresSinNombreSinProduccion();
+    
+    List<Productor> filtrarProductoresxRegionxCantidadBotellas();
 }
