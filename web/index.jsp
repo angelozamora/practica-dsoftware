@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index.jsp
+    Created on : 27-ago-2020, 17:51:57
+    Author     : Tito
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,36 +12,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-	<style type="text/css">
-		#examen{
-			position: relative;
-			top: 0;
-			bottom: 0;
-			left:0;
-			right:0;
-			margin: auto;
-			width: 800px;
-			min-height: 700px;
-			border-radius: 2rem;
-			background-color: #ececec;
-			padding: 50px;
-		}
-		.center{
-			text-align: center;
-		}
-		.w100{
-			width: 100%;
-			display:inline-block;
-			float:left;
-		}
-		.respuesta{
-			background-color: white;
-			margin: 15px 0;
 
-		}
+	<style type="text/css">
+            #examen{
+                    position: relative;
+                    top: 0;
+                    bottom: 0;
+                    left:0;
+                    right:0;
+                    margin: auto;
+                    width: 800px;
+                    min-height: 700px;
+                    border-radius: 2rem;
+                    background-color: #ececec;
+                    padding: 50px;
+            }
+            .center{
+                    text-align: center;
+            }
+            .w100{
+                    width: 100%;
+                    display:inline-block;
+                    float:left;
+            }
+            .respuesta{
+                    background-color: white;
+                    margin: 15px 0;
+
+            }
 
 	</style>
+</head>
 <body>
 	<section id="examen">
 		<h1 class="center">PARTE 1 EXAMEN FINAL</h1>
