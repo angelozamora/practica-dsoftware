@@ -21,7 +21,7 @@ public class FactoryDB {
        factorydb = new FactoryDB(); 
     }
     
-    public FactoryDB getInstance(){
+    public static FactoryDB getInstance(){
         return factorydb;
     }
     

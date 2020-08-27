@@ -3,21 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Factory;
+package modelo;
 
 /**
  *
  * @author Angelo
  */
-public class FactoryDAO {
+public class Productor {
     
-    static FactoryDAO factoryDAO;
+    private int id ;
+    private String nombre;
+    private String apellido;
+    private String region;
     
-    static{
-        factoryDAO = new FactoryDAO();
-    }
     
-    public static FactoryDAO getInstance(){
-        return factoryDAO;
-    }
+    
 }
