@@ -47,7 +47,7 @@ public class MongoProductorDAO implements IProductorDAO{
     }
 
     @Override
-    public List<Productor> filtrarProductoresxRegionxCantidadBotellas() {
+    public List<Productor> filtrarProductoresxRegionxCantidadBotellas(String region, int cantidad) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
