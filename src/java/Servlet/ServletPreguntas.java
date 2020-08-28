@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  */
 @WebServlet(name = "ServletPreguntas", urlPatterns = {"/ServletPreguntas"})
 public class ServletPreguntas extends HttpServlet {
-
+    HttpSession sesion;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,6 +35,7 @@ public class ServletPreguntas extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+        sesion = request.getSession(false);
         response.setContentType("text/html;charset=UTF-8");
         String accion = request.getParameter("accion");
         switch(request.getParameter("accion")){
@@ -92,8 +93,10 @@ public class ServletPreguntas extends HttpServlet {
     private void pregunta1(HttpServletRequest request, HttpServletResponse response) {
 
         HttpSession sesion = request.getSession(false);
-            String region = request.getParameter("region");
-            String cantidad = request.getParameter("cantidad");
+        String region = request.getParameter("region");
+        String cantidad = request.getParameter("cantidad");
+        sesion.setAttribute("region", region);
+        sesion.setAttribute("cantidad", cantidad);
         try{
             Map<String, String> Mensaje = new LinkedHashMap<String, String>();
             Mensaje.put("mensaje", "tabla1.jsp");
@@ -111,10 +114,145 @@ public class ServletPreguntas extends HttpServlet {
     }
 
     private void pregunta2(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
+        HttpSession sesion = request.getSession(false);
+        String grado = request.getParameter("grado");
+        String productor = request.getParameter("productor");
+        sesion.setAttribute("grado", grado);
+        sesion.setAttribute("productor", productor);
+        try{
+            Map<String, String> Mensaje = new LinkedHashMap<String, String>();
+            Mensaje.put("mensaje", "tabla2.jsp");
+            
+            String json_data = new Gson().toJson(Mensaje);
+            
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json_data);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ServletPreguntas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     private void pregunta3(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        HttpSession sesion = request.getSession(false);
+        try{
+            Map<String, String> Mensaje = new LinkedHashMap<String, String>();
+            Mensaje.put("mensaje", "tabla3.jsp");
+            
+            String json_data = new Gson().toJson(Mensaje);
+            
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json_data);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ServletPreguntas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    private void pregunta4(HttpServletRequest request, HttpServletResponse response) {
+
+        HttpSession sesion = request.getSession(false);
+        try{
+            Map<String, String> Mensaje = new LinkedHashMap<String, String>();
+            Mensaje.put("mensaje", "tabla4.jsp");
+            
+            String json_data = new Gson().toJson(Mensaje);
+            
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json_data);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ServletPreguntas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    private void pregunta5(HttpServletRequest request, HttpServletResponse response) {
+
+        HttpSession sesion = request.getSession(false);
+        String region = request.getParameter("region");
+        String cantidad = request.getParameter("cantidad");
+        sesion.setAttribute("region", region);
+        sesion.setAttribute("cantidad", cantidad);
+        try{
+            Map<String, String> Mensaje = new LinkedHashMap<String, String>();
+            Mensaje.put("mensaje", "tabla5.jsp");
+            
+            String json_data = new Gson().toJson(Mensaje);
+            
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json_data);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ServletPreguntas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    private void pregunta6(HttpServletRequest request, HttpServletResponse response) {
+
+        HttpSession sesion = request.getSession(false);
+        String region = request.getParameter("region");
+        String cantidad = request.getParameter("cantidad");
+        sesion.setAttribute("region", region);
+        sesion.setAttribute("cantidad", cantidad);
+        try{
+            Map<String, String> Mensaje = new LinkedHashMap<String, String>();
+            Mensaje.put("mensaje", "tabla6.jsp");
+            
+            String json_data = new Gson().toJson(Mensaje);
+            
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json_data);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ServletPreguntas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    private void pregunta7(HttpServletRequest request, HttpServletResponse response) {
+
+        HttpSession sesion = request.getSession(false);
+        String region = request.getParameter("region");
+        String cantidad = request.getParameter("cantidad");
+        sesion.setAttribute("region", region);
+        sesion.setAttribute("cantidad", cantidad);
+        try{
+            Map<String, String> Mensaje = new LinkedHashMap<String, String>();
+            Mensaje.put("mensaje", "tabla7.jsp");
+            
+            String json_data = new Gson().toJson(Mensaje);
+            
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json_data);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ServletPreguntas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    private void pregunta8(HttpServletRequest request, HttpServletResponse response) {
+
+        HttpSession sesion = request.getSession(false);
+        try{
+            Map<String, String> Mensaje = new LinkedHashMap<String, String>();
+            Mensaje.put("mensaje", "tabla8.jsp");
+            
+            String json_data = new Gson().toJson(Mensaje);
+            
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json_data);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ServletPreguntas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 }

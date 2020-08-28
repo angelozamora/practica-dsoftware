@@ -20,50 +20,63 @@
 
 </head>
 <body>
+    <section id="examen">
+        
     <%
         HttpSession sesion= request.getSession(false);
-        String region = (String)sesion.getAttribute("region");
-        String cantidad = (String)sesion.getAttribute("cantidad");
+        String grado = (String)sesion.getAttribute("grado");
+        String productor = (String)sesion.getAttribute("productor");
         
         IAccesoFactory accesoFactory = IFactoryDAO.getInstance().getAccesoFactory("MySQL");
         IProductorDAO productorDAO = accesoFactory.getProductorService();
-        List<Productor> productorList = productorDAO.filtrarProductoresxRegionxCantidadBotellas(region, Integer.parseInt(cantidad));
+        List<Productor> productorList = productorDAO.filtrarProductoresxRegionxCantidadBotellas(grado, Integer.parseInt(productor));
   
         int num_filas = productorList.size();// conseguimos el numero de filas de la tablaReporteResumen para validar que exista
         if(num_filas>0){
         
     %>
-	<section id="examen">
+	
             <table class="table table-striped">
                     <thead>
                         <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
+                            <th scope="col">#</th>
+                            <th scope="col">n°identificacion</th>
+                            <th scope="col">Productor</th>
                         </tr>	
                     </thead>
                     <tbody>
-                        <%
-                        for(int i=0 ; i < num_filas ; i++ ){
-                        %>
                         <tr>
-                            <th scope="row"><%=i+1%></th>
-                            <td><%=productorList.get(i).getNombre()%></td>
-                            <td><%=productorList.get(i).getApellido()%></td>
+                            <th scope="row">1</th>
+                            <td>---</td>
+                            <td>---</td>
                         </tr>
-                        <%
-                        }
-                        %>
                     </tbody>
-            </table>
-	</section>
+                </table>
        <%           
-    }
+    }else{
     %>
 	
-	
+	<table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">n°identificacion</th>
+                    <th scope="col">Productor</th>
+                </tr>	
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+            </tbody>
+        </table>
 
-
+    <%
+        }
+%>
+	</section>
 
 
 	<footer>
