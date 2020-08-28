@@ -47,20 +47,20 @@
 	<section id="examen">
 		<h1 class="center">PARTE 1 EXAMEN FINAL</h1>
 <!-- inicio pregunta 1 -->
-		<form class="row">
+                <form id="form1" class="row" action="ServletPreguntas">
 			<p class="pregunta">1.¿Muestre el nombre y el apellido de los productores de una región determinada que han tenido una producción superior a una cantidad determinada de botellas?</p>		
 			<div class="col-md-6">
 				<div class="form-group">
-					<input type="text" class="form-control" id="region" placeholder="Ingrese Región">
+					<input type="text" class="form-control" id="region" name="region" placeholder="Ingrese Región">
 				</div>
 			</div>
 			<div class="col-md-2">
 				<div class="form-group">
-					<input type="text" class="form-control" id="cantidad" placeholder="Cant">
+					<input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Cant">
 				</div>
 			</div>
 			<div class="col-md-4">
-				<button type="submit" class="btn btn-primary"> Enviar </button>
+                            <input type='submit' id='accion' name='Respuesta1' value='Respuesta1' />
 			</div>
 		</form>
 		<div class="respuesta" id="respuesta1">
@@ -291,6 +291,38 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	</footer>
+	
+        <script type='text/javascript'>
+    
+    $(document).ready(function () {
+        $('#form1').validate({
+            rules: {
+                region: {required: true},
+                cantidad: {required: true, number: true}
+            },
+            messages: {
+                region: 'Este Campo es Obligatorio',
+                cantidad: {required:'Este Campo es Obligatorio',number:'Solo Numeros'}
+            },
+            submitHandler: function (form) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'ServletPreguntas',
+                    dataType: 'json',
+                    data:
+                        {
+                            accion: $('#accion').val(),
+                            region: $('#region').val(),
+                            cantidad: $('#cantidad').val(),
+                        },
+                    success: function (response) {
+                        $('#respuesta1').load(response.mensaje);
+                    }
+                });
+            }
+        });
+    });
+</script>
+        </footer>
 </body>
 </html>
