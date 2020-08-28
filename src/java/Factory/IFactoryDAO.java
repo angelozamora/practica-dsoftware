@@ -5,6 +5,8 @@
  */
 package Factory;
 
+import design.IAccesoFactory;
+
 /**
  *
  * @author Angelo
@@ -19,6 +21,18 @@ public class IFactoryDAO {
     
     public static FactoryDB getInstance(){
         return factorydb;
+    }
+    
+    public static IAccesoFactory getAccesoFactory(String tipo){
+        switch(tipo){
+            case "MySQL":
+                return MySQLFactoryDAO.getInstance();
+            case "Mongo":
+                return MongoFactoryDAO.getInstance();
+            default:
+                throw new RuntimeException("Unsupported db type");
+        }
+        
     }
     
     

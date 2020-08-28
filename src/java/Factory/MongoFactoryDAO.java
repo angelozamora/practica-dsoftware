@@ -8,6 +8,7 @@ package Factory;
 import dao.MongoVinoDAO;
 import dao.MySQLProductorDAO;
 import dao.MySQLVinoDAO;
+import design.IAccesoFactory;
 import design.IProductorDAO;
 import design.IVinoDAO;
 
@@ -15,7 +16,7 @@ import design.IVinoDAO;
  *
  * @author Angelo
  */
-public class MongoFactoryDAO {
+public class MongoFactoryDAO implements IAccesoFactory{
     
     static MongoFactoryDAO mongofactorydb;
     
@@ -27,11 +28,12 @@ public class MongoFactoryDAO {
         return mongofactorydb;
     }
     
-    
+    @Override
     public IVinoDAO getVinoService(){
         return new MySQLVinoDAO();
     }
     
+    @Override
     public IProductorDAO getProductorService(){
         return new MySQLProductorDAO();
     }
