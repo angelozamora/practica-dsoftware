@@ -15,6 +15,7 @@ public class Productor {
     private String nombre;
     private String apellido;
     private String region;
+    private int cantidad;
 
     public Productor() {
     }
@@ -51,6 +52,14 @@ public class Productor {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
     
     
