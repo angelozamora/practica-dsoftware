@@ -45,10 +45,12 @@
 </head>
 <body>
 	<section id="examen">
-            <a href="../src/java/Servlet/ServletVista.java">dsagasdgadsfas</a>
+            <form method="POST" action="/ServletVista">
+                <input type="submit" value="prueba">
+            </form>
 		<h1 class="center">PARTE 1 EXAMEN FINAL</h1>
 <!-- inicio pregunta 1 -->
-                <form id="form1" class="row" action="ServletPreguntas">
+                <form id="form1" class="row">
 			<p class="pregunta">1.¿Muestre el nombre y el apellido de los productores de una región determinada que han tenido una producción superior a una cantidad determinada de botellas?</p>		
 			<div class="col-md-6">
 				<div class="form-group">

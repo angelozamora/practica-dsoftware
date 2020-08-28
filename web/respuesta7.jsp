@@ -29,9 +29,9 @@
         
         IAccesoFactory accesoFactory = IFactoryDAO.getInstance().getAccesoFactory("MySQL");
         IProductorDAO productorDAO = accesoFactory.getProductorService();
-        List<Productor> productorList = productorDAO.filtrarProductoresxRegionxCantidadBotellas(grado, Integer.parseInt(productor));
+        List<Productor> tabla = productorDAO.
   
-        int num_filas = productorList.size();// conseguimos el numero de filas de la tablaReporteResumen para validar que exista
+        int num_filas = tabla.size();// conseguimos el numero de filas de la tablaReporteResumen para validar que exista
         if(num_filas>0){
         
     %>
@@ -40,16 +40,22 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">n°identificacion</th>
-                            <th scope="col">Productor</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
                         </tr>	
                     </thead>
                     <tbody>
+                        <%
+                        for(int i=0 ; i < num_filas ; i++ ){
+                        %>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>---</td>
-                            <td>---</td>
+                            <th scope="row"><%=i+1%></th>
+                            <td><%=tabla.get(i).getNombre()%></td>
+                            <td><%=tabla.get(i).getApellido()%></td>
                         </tr>
+                        <%
+                        }
+                        %>
                     </tbody>
                 </table>
        <%           
@@ -60,8 +66,8 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">n°identificacion</th>
-                    <th scope="col">Productor</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
                 </tr>	
             </thead>
             <tbody>

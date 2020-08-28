@@ -25,7 +25,8 @@ public class MongoVinoDAO  implements IVinoDAO{
 
     @Override
     public List<Vino> obtenerVinos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Vino> lista=null;
+        return lista;
     }
 
     @Override
@@ -35,12 +36,14 @@ public class MongoVinoDAO  implements IVinoDAO{
 
     @Override
     public Vino obtenerVinoMayorProduccion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Vino vino = null;
+        return vino;
     }
 
     @Override
     public List<Vino> obtenerVinoxGradoOProductor(String grado, int idProductor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Vino> lista=null;
+        return lista;
     }
     
 }

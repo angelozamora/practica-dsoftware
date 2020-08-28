@@ -20,6 +20,8 @@
 
 </head>
 <body>
+    <section id="examen">
+        
     <%
         HttpSession sesion= request.getSession(false);
         String region = (String)sesion.getAttribute("region");
@@ -33,7 +35,7 @@
         if(num_filas>0){
         
     %>
-	<section id="examen">
+	
             <table class="table table-striped">
                     <thead>
                         <tr>
@@ -56,14 +58,31 @@
                         %>
                     </tbody>
             </table>
-	</section>
        <%           
-    }
+    }else{
     %>
 	
-	
+	<table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                </tr>	
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+            </tbody>
+        </table>
 
-
+    <%
+        }
+%>
+	</section>
 
 
 	<footer>
