@@ -10,6 +10,7 @@ import design.IVinoDAO;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import modelo.Resultado;
 import modelo.Vino;
@@ -67,6 +68,46 @@ public class MySQLVinoDAO implements IVinoDAO{
         
 
         return vino;
+    }
+
+    @Override
+    public List<Vino> obtenerVinoxGradoOProductor(String grado, int idProductor) {
+    
+        List<Vino> vinoList = new ArrayList<Vino>();
+        
+        try{
+            st=cn.createStatement();
+            if(grado!=null || grado!=""){
+                rs=st.executeQuery("CALL SP_vinoxGrado('"+grado+"')");
+                
+                while(rs.next()){
+                    Vino vino = new Vino();
+                    vino.setId(rs.getInt("idVino"));
+                    
+                    vinoList.add(vino);
+   
+                }
+            }
+            else if(idProductor>0){
+                rs=st.executeQuery("CALL SP_vinoxProductor("+idProductor+")");
+                while(rs.next()){
+                    Vino vino = new Vino();
+                    vino.setId(rs.getInt("Vinos_idVino"));
+                    
+                    vinoList.add(vino);
+   
+                }
+            }
+            
+            
+        }
+        catch(Exception e){
+            e.getMessage();
+        }
+        
+
+        return vinoList;
+    
     }
     
 }

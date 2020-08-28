@@ -21,4 +21,6 @@ public interface IVinoDAO {
     Resultado eliminarVino(int id);
     
     Vino obtenerVinoMayorProduccion();
+    
+    List<Vino> obtenerVinoxGradoOProductor(String grado, int idProductor);
 }

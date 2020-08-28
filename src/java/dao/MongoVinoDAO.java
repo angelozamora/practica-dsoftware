@@ -37,5 +37,10 @@ public class MongoVinoDAO  implements IVinoDAO{
     public Vino obtenerVinoMayorProduccion() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Vino> obtenerVinoxGradoOProductor(String grado, int idProductor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
